@@ -1,0 +1,18 @@
+# Python Cache
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Environments
+venv/
+env/
+ENV/
+
+# Pytest
+.pytest_cache/
+
+# IDEs and OS files
+.vscode/
+.idea/
+.DS_Store
+*.bak

@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Mutation Report | examples/math_ops.py</title>
+
+<style>
+:root {
+    --bg: #0d1117;
+    --card-bg: #161b22;
+    --border: #30363d;
+    --text-main: #c9d1d9;
+    --text-muted: #8b949e;
+    --green: #2ea043;
+    --red: #f85149;
+    --yellow: #d29922;
+}
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, sans-serif;
+    background-color: var(--bg);
+    color: var(--text-main);
+    padding: 40px;
+    display: flex;
+    justify-content: center;
+}
+
+.dashboard {
+    width: 100%;
+    max-width: 900px;
+}
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    border-bottom: 1px solid var(--border);
+    padding-bottom: 15px;
+    margin-bottom: 30px;
+}
+
+.header h1 {
+    margin: 0;
+    font-size: 24px;
+}
+
+.meta {
+    color: var(--text-muted);
+    font-size: 14px;
+}
+
+.metrics-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 15px;
+    margin-bottom: 20px;
+}
+
+.metric-card {
+    background: var(--card-bg);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    padding: 20px;
+    text-align: center;
+}
+
+.metric-value {
+    font-size: 32px;
+    font-weight: bold;
+    margin: 10px 0 5px 0;
+}
+
+.metric-label {
+    font-size: 12px;
+    color: var(--text-muted);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.score-card {
+    border-color: #d29922;
+    box-shadow: 0 0 15px #d2992220;
+}
+
+.score-card .metric-value {
+    color: #d29922;
+}
+
+.insight-box {
+    margin-bottom: 25px;
+    padding: 15px;
+    border: 1px solid var(--yellow);
+    border-radius: 8px;
+    background: #161b22;
+    color: var(--text-main);
+}
+
+.details-section {
+    background: var(--card-bg);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+.details-header {
+    background: #010409;
+    padding: 15px 20px;
+    font-weight: bold;
+    border-bottom: 1px solid var(--border);
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+th, td {
+    padding: 12px 20px;
+    border-bottom: 1px solid var(--border);
+    font-size: 14px;
+}
+
+th {
+    color: var(--text-muted);
+    font-weight: 500;
+}
+
+.code-block {
+    background: #0d1117;
+    padding: 4px 8px;
+    border-radius: 4px;
+    font-family: monospace;
+    color: #ff7b72;
+    border: 1px solid var(--border);
+}
+
+.reason-text {
+    color: var(--text-muted);
+    font-size: 12px;
+    margin-top: 5px;
+}
+
+.status-badge {
+    padding: 4px 10px;
+    border-radius: 12px;
+    font-size: 12px;
+    font-weight: bold;
+}
+
+.status-killed {
+    background: var(--green);
+    color: white;
+}
+
+.status-survived {
+    background: var(--red);
+    color: white;
+}
+</style>
+</head>
+
+<body>
+<div class="dashboard">
+
+<div class="header">
+    <h1>🧬 Mutation Test Execution Report</h1>
+    <div class="meta">
+        Target: <strong>examples/math_ops.py</strong> |
+        Generated: 2026-05-26 00:51
+    </div>
+</div>
+
+<div class="metrics-grid">
+    <div class="metric-card score-card">
+        <div class="metric-label">Total Score (Moderate)</div>
+        <div class="metric-value">66%</div>
+    </div>
+
+    <div class="metric-card">
+        <div class="metric-label">Mutants Injected</div>
+        <div class="metric-value">3</div>
+    </div>
+
+    <div class="metric-card">
+        <div class="metric-label">Mutants Killed</div>
+        <div class="metric-value" style="color: var(--green);">2</div>
+    </div>
+
+    <div class="metric-card">
+        <div class="metric-label">Mutants Survived</div>
+        <div class="metric-value" style="color: var(--red);">1</div>
+    </div>
+</div>
+
+
+        <div class="insight-box">
+            ⚠️ <strong>Test Weakness Detected:</strong> 1 mutant(s) survived.
+            This indicates missing edge case or boundary test coverage.
+        </div>
+        
+
+<div class="details-section">
+    <div class="details-header">Detailed Mutation Log (Isolated Execution)</div>
+    <table>
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Mutation Applied</th>
+                <th>Execution Status</th>
+            </tr>
+        </thead>
+        <tbody>
+            
+        <tr>
+            <td>#1</td>
+            <td>
+                <span class="code-block">Arithmetic: '+' to '-'</span>
+                
+            </td>
+            <td>
+                <span class="status-badge status-killed">
+                    KILLED
+                </span>
+            </td>
+        </tr>
+        
+        <tr>
+            <td>#2</td>
+            <td>
+                <span class="code-block">Boundary: '>' to '>='</span>
+                
+            </td>
+            <td>
+                <span class="status-badge status-killed">
+                    KILLED
+                </span>
+            </td>
+        </tr>
+        
+        <tr>
+            <td>#3</td>
+            <td>
+                <span class="code-block">Boundary: '>' to '>='</span>
+                
+            </td>
+            <td>
+                <span class="status-badge status-survived">
+                    SURVIVED
+                </span>
+            </td>
+        </tr>
+        
+        </tbody>
+    </table>
+</div>
+
+</div>
+</body>
+</html>
