@@ -1,40 +1,51 @@
 # 🧬 FaultForge: Automated Mutation Testing
 
+> 🚀 FaultForge evaluates whether your tests truly detect real bugs—not just pass coverage checks.
+
 Forge unbreakable code. A compiler-level Quality Assurance tool that uses Abstract Syntax Tree (AST) manipulation to inject isolated logical faults into Python codebases, exposing blind spots in your unit tests.
 
 Rather than checking if your code works, this tool checks if your **tests actually catch when the code breaks**.
 
+---
+
 ## 🚀 Features
 
-* **AST Manipulation:** Utilizes Python's built-in `ast` module to deconstruct source code, safely inject logical mutations (e.g., swapping `>` for `>=`), and reconstruct the executable code.
-* **Isolated Execution (v2.0):** Tests each mutation individually in a secure loop to generate granular, mathematically accurate mutation scores.
-* **Automated Evaluation:** Leverages the `subprocess` module to spin up temporary test environments, run `pytest`, and evaluate mutant survival rates.
-* **Failsafe Architecture:** Implements a strict backup-and-restore pipeline to guarantee original source code is preserved, even in the event of a runtime crash.
+* **AST Manipulation:** Uses Python's built-in `ast` module to safely inject logical mutations (e.g., `>` → `>=`)
+* **Isolated Execution (v2.0):** Runs each mutation independently for accurate mutation scoring
+* **Automated Evaluation:** Executes tests via `pytest` using `subprocess`
+* **Failsafe Architecture:** Backup-restore pipeline ensures original code integrity
+* **Insight Detection:** Highlights weak test cases and missing edge conditions
+
+---
+
+## ⚙️ How It Works
+
+1. Parses source code into an Abstract Syntax Tree (AST)
+2. Injects logical mutations (e.g., `>` → `>=`)
+3. Executes test suite using `pytest`
+4. Tracks which mutations are detected (killed) or missed (survived)
+5. Generates mutation score + HTML dashboard
+
+---
 
 ## 📊 Interactive Execution Dashboard
 
-After executing the test suite, FaultForge automatically generates a dynamic HTML dashboard providing granular insights into mutant survival rates, boundary condition weaknesses, and overall test suite robustness.
+FaultForge generates a dynamic HTML report with mutation score, execution logs, and test weakness insights.
 
-![FaultForge Dashboard Preview](assets/mutation_score.png)
+### ✅ Strong Test Case (All Mutants Killed)
+![FaultForge Dashboard Preview](assets/killed_case.png)
+### ⚠️ Weak Test Case (Survived Mutant Detected)
+![Survived Mutant Example](assets/survived_case.png)
 
-## 📂 Architecture
+---
 
-This project is structured as a modular Python package for high maintainability and extensibility.
+## 💻 CLI Output
+## Killed Case
+![cli output](assets/killed_case_cli.png)
+## Survived Case
+![cli output](assets/survived_case_cli.png)
 
-```text
-FaultForge/
-├── src/
-│   ├── core/
-│   │   ├── engine.py        # Subprocess and Pytest execution logic
-│   │   └── ast_hacker.py    # NodeTransformer for isolated operator mutation
-│   ├── reporters/
-│   │   ├── console.py       # Terminal CLI output formatting
-│   │   └── html_report.py   # Dynamic UI dashboard generator
-│   └── cli.py               # Argument parsing and main execution loop
-├── tests/                   # Unit tests verifying the internal mutator engine
-├── examples/                # Sample targets and weak test suites for demonstration
-└── assets/                  # Documentation images
-```
+
 
 # 🛠️ Installation & Setup
 Clone the repository:
@@ -64,8 +75,34 @@ python -m src.cli --target examples/math_ops.py --tests examples/test_math_ops.p
 # Expected Output:
 The terminal will display the live, isolated execution loop. Upon completion, a mutation_report.html file will be generated in your root directory. Open it in any browser to view your test suite's official Mutation Score.
 
+
+# 🎯 Why FaultForge?
+
+ Traditional testing answers:
+
+“Does the code work?”
+
+FaultForge answers:
+
+“Will your tests catch real bugs?”
+
+It helps developers:
+
+Identify weak or missing test cases
+Detect boundary condition gaps
+Avoid false confidence from passing tests
+
+👉 Measures test effectiveness, not just coverage.
+
+# 🔮 Future Improvements
+
+ Support for multiple languages (C, Java)
+
+ Advanced mutation operators
+ CI/CD integration
+ 
+ HTML → PDF report export
 # 👩‍💻 Author
 Saheli Mahanty 
 
  Computer Science & Engineering @ NIT Durgapur
-

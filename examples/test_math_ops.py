@@ -8,6 +8,6 @@ def test_is_positive():
     assert is_positive(5) == True
     assert is_positive(0) == False 
 
-def test_is_greater_than_ten():
-    # 2. WEAK TEST: This will pass even if the code mutates to >=
-    assert is_greater_than_ten(15) == True
+# def test_is_greater_than_ten():
+#     # 2. WEAK TEST: This will pass even if the code mutates to >=
+#     assert is_greater_than_ten(15) == True

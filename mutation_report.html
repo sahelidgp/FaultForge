@@ -78,12 +78,12 @@ body {
 }
 
 .score-card {
-    border-color: #d29922;
-    box-shadow: 0 0 15px #d2992220;
+    border-color: #2ea043;
+    box-shadow: 0 0 15px #2ea04320;
 }
 
 .score-card .metric-value {
-    color: #d29922;
+    color: #2ea043;
 }
 
 .insight-box {
@@ -166,19 +166,19 @@ th {
     <h1>🧬 Mutation Test Execution Report</h1>
     <div class="meta">
         Target: <strong>examples/math_ops.py</strong> |
-        Generated: 2026-05-26 00:51
+        Generated: 2026-05-26 01:59
     </div>
 </div>
 
 <div class="metrics-grid">
     <div class="metric-card score-card">
-        <div class="metric-label">Total Score (Moderate)</div>
-        <div class="metric-value">66%</div>
+        <div class="metric-label">Total Score (Excellent)</div>
+        <div class="metric-value">100%</div>
     </div>
 
     <div class="metric-card">
         <div class="metric-label">Mutants Injected</div>
-        <div class="metric-value">3</div>
+        <div class="metric-value">2</div>
     </div>
 
     <div class="metric-card">
@@ -188,16 +188,11 @@ th {
 
     <div class="metric-card">
         <div class="metric-label">Mutants Survived</div>
-        <div class="metric-value" style="color: var(--red);">1</div>
+        <div class="metric-value" style="color: var(--red);">0</div>
     </div>
 </div>
 
 
-        <div class="insight-box">
-            ⚠️ <strong>Test Weakness Detected:</strong> 1 mutant(s) survived.
-            This indicates missing edge case or boundary test coverage.
-        </div>
-        
 
 <div class="details-section">
     <div class="details-header">Detailed Mutation Log (Isolated Execution)</div>
@@ -233,19 +228,6 @@ th {
             <td>
                 <span class="status-badge status-killed">
                     KILLED
-                </span>
-            </td>
-        </tr>
-        
-        <tr>
-            <td>#3</td>
-            <td>
-                <span class="code-block">Boundary: '>' to '>='</span>
-                
-            </td>
-            <td>
-                <span class="status-badge status-survived">
-                    SURVIVED
                 </span>
             </td>
         </tr>
